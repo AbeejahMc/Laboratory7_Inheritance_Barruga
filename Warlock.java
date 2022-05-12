@@ -3,20 +3,20 @@ public class Warlock extends Character{
         super(inpName, inpHealthpoints, inpLevel, inpMana);
     }
 
-    public void demonSlash(Character enemyCharacter){
-        if (super.manaPoints >= 20){
+    public void demonSlash(Character enemyCharacter){   // Attack of the Warlock
+        if (super.manaPoints >= 20){                    // Condition to check if enough manapoints
             System.out.println(super.characterName + " attacks " + enemyCharacter.characterName + " with Demon Slash (Damage - 35)");
-            int damagePoints = 35;
-            super.manaPoints -= 20;
-            damageTarget(enemyCharacter, damagePoints);
+            int damagePoints = 35;                      
+            super.manaPoints -= 20;                     // Manapoints Deduction
+            damageTarget(enemyCharacter, damagePoints); // Call a function from Superclass
         } else {
             System.out.println("Not enough Mana Points");
         }
     };
     
-    public void energize(){
+    public void energize(){                             // Recovery spell 
         System.out.println(super.characterName + " used Energize (+25 Manapoints)");
         super.manaPoints += 25;
-        super.showChar();
+        super.showChar();                               // Invoke a function from superclass
     };
 }
